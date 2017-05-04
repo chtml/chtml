@@ -10,15 +10,27 @@ npm install chtml
 
 ## 使用
 
+### shell
+
 ```
+chtml input.chtml -o -w output.html
+```
+
+### node
+```javascript
 import chtml from 'chtml'
-chtml.compileFromString('《块级样式》{{文字}}《块级样式》', {
-  "文字": "你好，世界"
+chtml.compile(`
+ 《块级样式》你好，{{文字}}《/块级样式》
+`)({
+  "文字": "世界"
 })
+
+// output
+<div>你好，世界</div>
 ```
 
 ## 接口
-### compileFromString(str, data?)
+### compile(str, options?)
 
-### compileFromFile(path, data?)
+### compileFromFile(path, options?)
 
