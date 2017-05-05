@@ -1,8 +1,4 @@
 class Init {
-  constructor () {
-    this.foo = 'foo'
-  }
-
   async run () {
     console.log('hello')
     await this.sleep(1)
@@ -17,4 +13,3 @@ class Init {
 }
 
 new Init().run()
-
