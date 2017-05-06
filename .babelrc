@@ -1,0 +1,9 @@
+{
+  "presets": [
+    ["nodejs", {
+      "targets": {
+        "node": 6
+      }
+    }]
+  ]
+}

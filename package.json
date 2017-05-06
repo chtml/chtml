@@ -1,19 +1,18 @@
 {
-  "name": "moto",
+  "name": "chtml",
   "version": "0.0.0",
-  "description": "",
+  "description": "中国人自己的超文本标记语言",
   "main": "lib/index.js",
   "devDependencies": {
     "babel-cli": "6.x.x",
-    "babel-preset-tmall": "6.x.x"
+    "babel-preset-nodejs": "6.x.x",
+    "standard-flow": "*"
   },
   "scripts": {
-    "dev": "npm run watch-build",
+    "dev": "npm run build -- --watch",
+    "build": "npm run lint && npm run copy && babel src --out-dir lib --retain-lines --source-maps inline",
     "copy": "rm -rf lib && cp -r src lib",
-    "build": "npm run lint && npm run copy && babel --presets tmall --plugins transform-runtime src/ --out-dir lib/ --retain-lines --source-maps inline",
-    "watch-build": "npm run build -- --watch",
-    "watch": "npm run watch-build",
-    "lint": "standard 'src/**/**.js' --fix",
+    "lint": "standard-flow 'src/**/**.js' --fix",
     "prepublish": "npm run lint && npm run build"
   },
   "author": "",
